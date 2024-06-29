@@ -92,6 +92,7 @@ body{
     background-color: rgb(255, 174, 201);
 }
 .blog-card-details-button button{
+    cursor: pointer;
     background-color: rgb(255, 174, 201);
     color: rgb(255, 0, 85);
     border: none;

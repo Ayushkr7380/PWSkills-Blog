@@ -65,7 +65,7 @@ function displayBlogs() {
                 <div class="blog-card-details">
                     <p class="blog-card-details-heading">${d.title}</p>
                     <p class="blog-card-details-description">${d.description}</p>
-                    <a href='./Blog.html?index=${idx}' class="blog-card-details-button"><button>Read More</button></a>
+                    <a href="./Blog.html?index=${idx}" class="blog-card-details-button"><button>Read More</button></a>
                 </div>
             </div>`;
         });
