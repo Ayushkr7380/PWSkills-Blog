@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWSKills Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="background"></div>
+    <div id="heading">
+        <p>PWSkills Blog</p>
+        <span id="add-icon"><i class="fa-solid fa-plus" id="add-icon-button"></i></span>
+    </div>
+    <div id="all-blog"></div>
+    <div id="addblog">
+        <div id="remove"><i class="fa-solid fa-xmark" id="removeicon"></i></div>
+        <div id="form-body">
+            <form id="blog-data">
+                <input type="text" placeholder="Enter Blog Title : " name="title" id="title" maxlength="45">
+                <input type="file" name="image">
+                <input type="text" placeholder="Enter Blog Description : " name="description" id="description" maxlength="45">
+                <textarea name="content" id="content" placeholder="Write Blog Content : " rows="10px"></textarea >
+                <button type="submit">Add Blog</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/eff65daa71.js" crossorigin="anonymous"></script>
+</body>
+</html>

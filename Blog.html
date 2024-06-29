@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        #heading{
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #heading p{
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 2rem;
+        }
+        #add-icon i{
+            cursor: pointer;
+            font-size: 25px;
+        }
+        #blog-body{
+            margin: 0rem 1rem;
+            border: 2px solid black;
+            min-height: 78vh;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            /* max-width: 90vw; */
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            box-shadow: 2px 2px 5px black;
+        }
+        .blog-card{
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            background-color: blueviolet;
+            border-radius: 1rem;
+            flex-wrap: wrap;
+        }
+        .image-body {
+            border: 2px solid white;
+            height: 190px;
+            width: 220px;
+            margin: 1rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            background-color: white;
+        }
+        .image-body img{
+            margin: 0 auto;
+            height: 180px;
+            width: 190px;
+        }
+        .blog-card-details{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0rem 1rem;
+        }
+        .blog-card-details-heading{
+            font-family: "Roboto", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            color: white;
+        }
+        .blog-card-details-description{
+            font-family: "Roboto", sans-serif;
+            font-style: normal;
+            margin-top: 0;
+            color: white;
+        }
+        #content{
+            font-size: large;
+        }
+        @media screen and (max-width: 395px) and (max-height: 851px) {
+            #blog-body{
+                
+                width: 80vw;
+                margin:0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="heading">
+        <p>PWSkills Blog</p>
+        <a href ='/' id="add-icon"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div id="blog-body"></div>
+    <script src="https://kit.fontawesome.com/eff65daa71.js" crossorigin="anonymous"></script>
+        <script>
+        const datafromlocalstorage = JSON.parse(localStorage.getItem('blog')) || [];
+
+        const URLParams = new URLSearchParams(window.location.search);
+        const index = URLParams.get('index');
+
+        console.log(index)
+        console.log(datafromlocalstorage[index])
+        const d = datafromlocalstorage[index]
+
+        const blogBody = document.getElementById('blog-body');
+        blogBody.innerHTML = `<div class="blog-card">
+            
+            <div class="blog-card-details">
+                <p class="blog-card-details-heading">${d.title}</p>
+                <p class="blog-card-details-description">${d.description}</p>               
+            </div>
+            <div class="image-body">
+                <img src="${d.image}" alt="image">
+            </div>  
+        </div>
+        <div id='content'>
+            <p>${d.content}</p>
+        </div>
+        `      
+    </script>
+</body>
+</html>
